@@ -6,6 +6,7 @@ import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
 import authMiddleware from "./middleware/authMiddleware.js";
+import farmBaselineRoutes from "./routes/farmBaselineRoutes.js";
 
 import connectDB from "./config/db.js";
 
@@ -23,6 +24,7 @@ app.use(cors());
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);
+app.use("/api/farm-baseline", farmBaselineRoutes);
 
 // =====================================
 // Database
